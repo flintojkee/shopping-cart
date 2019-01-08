@@ -1,0 +1,10 @@
+<div class="cart-items">
+    <h1>Shopping cart</h1>
+    <div *ngIf="items.length === 0" class="cart-items__empty">
+        <h1>empty :(</h1>
+    </div>
+    <app-item *ngFor="let item of items"
+    [item]=item
+    [amount]=item.amount
+    ></app-item>
+</div>

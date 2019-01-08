@@ -1,0 +1,41 @@
+
+
+.detailed-item-card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border-radius: 5px; 
+  padding: 1.5em;
+}
+
+.detailed-item-card:hover {
+  border-radius: 5px 5px 0 0;
+}
+
+
+.detailed-item-card img {
+    border-radius: 5px;
+}
+
+.detailed-item-card__cost img {
+    width: 17px;
+    margin-right: 5px;
+    transform: translateY(3px);
+    height: auto;
+}
+  
+.detailed-item-card__back-btn  {
+  background-color: #739E82;
+  margin-top: 1em;
+  width: 100%;
+  border: none;
+  padding: 5px 15px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+.detailed-item-card__back-btn:hover {
+  background-color: #2C5530;
+}

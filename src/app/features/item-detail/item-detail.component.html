@@ -1,0 +1,17 @@
+
+  <div class="detailed-item-card" *ngIf='item'>
+    <img [src]="item.url_image">
+    <p>Name: {{item.localized_name}}</p>
+    <p>Recipe: {{item.recipe}}</p>
+    <p>Secret shop: {{item.secret_shop}}</p>
+    <div class="detailed-item-card__cost">
+        <span>Price: </span>
+        <img src="assets/gold.png">{{item.cost}}
+    </div>
+    <button class='detailed-item-card__back-btn'
+          (click)='onBack()'
+          style='width:80px'>
+    <i class='fa fa-chevron-left'></i> Back
+  </button>
+  </div>
+  

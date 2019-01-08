@@ -1,0 +1,35 @@
+<div class="item-list">
+<div class="item-list__filters">
+    <button class="item-list__filter-button" (click)="filterItems('all')" [ngClass]="getClasses('all')">All</button>
+    <button class="item-list__filter-button" (click)="filterItems('secret', $event)" [ngClass]="getClasses('secret')">Secret Shop</button>
+    <button class="item-list__filter-button" (click)="filterItems('side', $event)" [ngClass]="getClasses('side')">Side Shop</button>
+    <button class="item-list__filter-button" (click)="filterItems('recipe', $event)" [ngClass]="getClasses('recipe')">Recipes</button>
+</div>
+<div class="item-list__content">
+
+<div class="item-list__items">
+    <app-item *ngFor="let item of pagedItems"
+    [item]=item
+    class="item-list__item"
+    ></app-item>
+</div>
+
+<ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+  <li [ngClass]="{disabled:pager.currentPage === 1}">
+    <a (click)="setPage(1)">First</a>
+  </li>
+  <li [ngClass]="{disabled:pager.currentPage === 1}">
+    <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+  </li>
+  <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+    <a (click)="setPage(page)">{{page}}</a>
+  </li>
+  <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+    <a (click)="setPage(pager.currentPage + 1)">Next</a>
+  </li>
+  <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+    <a (click)="setPage(pager.totalPages)">Last</a>
+  </li>
+</ul>
+</div>
+</div>

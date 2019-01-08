@@ -1,0 +1,98 @@
+.item-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  border: 1px solid #cad0d2;
+  border-radius: 4px;
+  overflow: hidden;
+  color: #57727C;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.item-card__delete {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+}
+
+.item-card__delete:hover {
+  color: #A74813;
+}
+
+.item-card__image {
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+  max-width: 100%;
+}
+.item-card__image img {
+  border-radius: 4px;
+}
+.item-card__info {
+  margin-top: auto;
+}
+
+.item-card__descriptionText {
+  text-align: center;
+}
+
+.item-card__descriptionText a {
+  text-decoration: none;
+  color: #2C5530;
+  cursor: pointer;
+}
+
+.item-card__cost {
+  text-align: center;
+  padding: 5px 15px;
+}
+
+.item-card__cost img {
+  width: 17px;
+  margin-right: 5px;
+  transform: translateY(3px);
+  height: auto;
+}
+
+.item-card__button-container {
+  display: flex;
+}
+
+.item-card__button {
+  width: 100%;
+  border: none;
+  padding: 5px 15px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.item-card__button_buy {
+  background-color: #739E82;
+}
+
+.item-card__button_buy:hover {
+  background-color: #2C5530;
+}
+
+.item-card__button_buy:active {
+  background-color: #2C5530;
+  transform: translateY(2px);
+}
+
+.item-card__button-remove {
+  background-color: #D38B5D;
+}
+
+.item-card__button-remove:hover {
+  background-color: #A74813;
+}
+
+.item-card__button-remove:active {
+  background-color: #A74813;
+  transform: translateY(2px);
+}

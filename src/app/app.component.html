@@ -1,0 +1,24 @@
+<header>
+    <div class="header__content">
+        <div class="header__logo">
+            <img class="header__logo-img" src="assets/dota.png">
+            <span class="header__logo-txt">Shop</span>
+        </div>
+        <a [routerLink]="['/home']">Home</a>
+        <a [routerLink]="['/items']">Items</a>
+        <div class="cart">
+            <i [routerLink]="['/cart']" class="fas fa-4x fa-shopping-cart cart__icon"></i>
+            <div class="cart__cost">
+                <img src="assets/gold.png">
+                <span>{{cartCost}}</span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="main">
+    <router-outlet></router-outlet>
+</div>
+<footer>
+    @VasylenkoDenys for AVA.codes
+</footer>

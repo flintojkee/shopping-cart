@@ -1,0 +1,21 @@
+<div class="item-card">
+    <i *ngIf="amount" class="fas fa-times item-card__delete" (click)="removeItemsFromCart()"></i>
+    <div class="item-card__image">
+        <img [src]="item.url_image">
+    </div>
+    <div class="item-card__info">
+      <div class="item-card__descriptionText">
+        <a [routerLink]="['/items', item.id]">{{item.localized_name}}</a>
+        <div *ngIf="amount">
+          Amount: {{amount}}
+        </div>
+      </div>
+      <div class="item-card__cost">
+        <img src="assets/gold.png">{{item.cost}}
+      </div>
+      <div class="item-card__button-container">
+          <button class="item-card__button  item-card__button_buy" (click)="addItemToCart()">Buy</button>
+          <button *ngIf="amount" class="item-card__button item-card__button-remove" (click)="removeItemFromCart()">Remove</button>
+      </div>
+    </div>
+</div>
