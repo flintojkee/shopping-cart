@@ -5,7 +5,9 @@ Small Angular application to display products and allow the user to add these pr
 ## Get the Code
 ```
 git clone https://github.com/flintojkee/shopping-cart
+cd shopping-cart
 npm i
+npm start
 ```
 
 ## Development server
