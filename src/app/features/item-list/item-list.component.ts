@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { IItem } from 'src/app/models/item.model';
 import { ItemService } from 'src/app/services/item.service';
 import { PagerService } from 'src/app/services/pager.service';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -9,7 +10,7 @@ import { PagerService } from 'src/app/services/pager.service';
   templateUrl: './item-list.component.html',
   styleUrls: ['./item-list.component.css']
 })
-export class ItemListComponent implements OnInit {
+export class ItemListComponent implements OnInit, OnDestroy {
 
   items: IItem[];
   filteredItems: IItem[];
@@ -18,9 +19,10 @@ export class ItemListComponent implements OnInit {
   errorMessage = '';
   selectedFilter = 'all';
   constructor(private itemService: ItemService, private pagerService: PagerService) { }
+  subscription: Subscription;
 
   ngOnInit() {
-    this.itemService.getItems().subscribe(
+    this.subscription = this.itemService.getItems().subscribe(
       items => {
         this.items = items;
         this.filteredItems = items;
@@ -63,6 +65,9 @@ export class ItemListComponent implements OnInit {
     }
     this.selectedFilter = key;
     this.setPage(1);
+  }
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
 }
